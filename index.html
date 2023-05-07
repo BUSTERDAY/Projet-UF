@@ -91,20 +91,60 @@
             <img src="ASSERTS/la tu dit que on mets sur tt les VM la Vmnet10 pour qu'elle rentre automatiquement dans le réseaux lan de pfsens.png" alt="Vmnet10 sur vm pour rentrer auto dans résean lan Pfsens">
 
             <p>
-                On retrouve le Pfsense avec IPV4 pour le lan :
+                Sur Pfsens, on avait besoin d'une IPv4 en statique pour assurer le bon échange de données entre les machines. On retrouve donc le Pfsense avec IPV4 pour le lan :
             </p>
             <img src="ASSERTS/Pfsense IPV4(lan).png" alt="Pfsense IPV4">
 
             <p>
-                On retrouve le Pfsense avec IPV6 pour le wan :
+                On retrouve le Pfsense avec IPV6 pour le wan, nous l'avons défini en bridge car dans notre cas cela devait pouvoir marcher sur différents réseaux avec des adresses réseaux différentes :
             </p>
             <img src="ASSERTS/pfsense IPV6 (wan).png" alt="Pfsense IPV6">
 
             <p>
-                Ensuite on a les règles de pare-feu pour le lan et le wan:
+                Ensuite on a les règles de pare-feu pour le lan et le wan, nous n'avons pas définit d'autres règles que celle de base car cela n'était pas nécessaire dans notre cas :
             </p>
             <img src="ASSERTS/régle pare feu lan.png" alt="pare feu lan">
             <img src="ASSERTS/regle pare feu wan.png" alt="pare feu wan">
+           
+            <p>
+                Le plan d'adressage ci dessous nous montre les adresses IP des différents éléments du réseau. <br>
+                L'adressage en 192.168.2.0 est une norme pour les réseaux locaux. <br>
+                Cela va nous permettre de pouvoir ensuite lier les différents éléments entre eux dans le réseau local et de pouvoir les connecter à internet. <br>
+            </p>
+            <img src="ASSERTS/PlanAdressage.png" alt="plan d'adressage">
+            <img src="ASSERTS/ShemaReseau.png" alt="shéma réseau">
+
+            <p>
+                Nous avons adresser l'IP statique Ubuntu en passant par les paramètres réseaux depuis l'interface graphique que propose Ubunto. <br>
+            </p>
+            <img src="ASSERTS/Adressage ip statique ubuntu expliquer les étape.png" alt="Adressage ip statique ubuntu expliquer les étape">
+
+            <p>
+                Nous avons adresser l'IP debian depuis le terminal et nous avons modifier le fichier que l'on trouve au chemin suivant : /etc/network/interfaces. <br>
+            </p>
+            <img src="ASSERTS/Adressage ip debian expliquer démarche.png" alt="Adressage ip debian expliquer démarche">
+
+            <p>
+                Nous avons adresser l'IP statique Windows. <br>
+                Pour cela, nous avons adresser l'IP en statique depuis l'interface graphique que propose Windows dans le panneau de configuration. <br>
+            </p>
+            <img src="ASSERTS/Addressage ip statique windows.png" alt="Addressage ip statique windows">
+
+            <p>
+                Pour créer le serveur apache, il a fallu installer apache2 et le configurer. <br>
+                Sur le screen suivant, Apache était déjà installer et configuer sur la machine, avant de lancer le serveur apache veillez a suivre les étapes ci dessous. <br>
+            </p>
+            <img src="ASSERTS/Installation et lancement serveur apache2.png" alt="installation et lancement serv apache">
+
+            <p>
+                Il a était également nécessaire de configurer le fichier apache. <br>
+            </p>
+            <img src="ASSERTS/Config fichier apache.png" alt="Config fichier apache">
+
+            <p>
+                Enfin, on configure et met en place le DNS pour le nom de domaine. <br>
+            </p>
+            <img src="ASSERTS/Mise en place du DNS du nom de domaine.png" alt="mise ne place DNS">
 
             <p>
                 Il a fallu coder un script pour copier les ficiers sur le serveur backup. <br>
@@ -112,15 +152,14 @@
             <img src="ASSERTS/Script pour copier les fichier sur le serveur backup.png" alt="Script pour copier les fichier sur le serveur backup">
 
             <p>
-                Lors ce que l'on souhaite récupérer une sauvegarde, on va utiliser ce script en mettant le nom du fichier que l'on souhaite récupérer. <br>
-            </p>
-            <img src="ASSERTS/c'est le même que pour le backup sauf que pour lui tu demande le fichier que tu veux récupérer dans le dossier Backup de la vm backup.png" alt="récup backup">
-
-            <p>
                 Il a fallu également définir une heure à laquel la sauvegarde se ferrait sous forme de crontab. <br>
             </p>
             <img src="ASSERTS/Ligne contrab pour effectuer la tache tout les jour a 3h du matin.png" alt="Ligne contrab pour effectuer la tache tout les jours a 3h du matin">
 
+            <p>
+                Lors ce que l'on souhaite récupérer une sauvegarde, on va utiliser ce script en mettant le nom du fichier que l'on souhaite récupérer. <br>
+            </p>
+            <img src="ASSERTS/c'est le même que pour le backup sauf que pour lui tu demande le fichier que tu veux récupérer dans le dossier Backup de la vm backup.png" alt="récup backup">
 
             <p>
                 Il a était nécessaire d'installer et de mettre en route un serveur ssh. <br>
@@ -129,47 +168,14 @@
             <img src="ASSERTS/Procédure installation et mise en route du serveur ssh aucune modification on garde la config de base.png" alt="Procédure installation et mise en route du serveur ssh">
 
             <p>
-                Il a était également nécessaire de configurer le fichier apache.<br>
+                Arpsè avoir fini la configuration des fichiers, et avoir mis les fichiers web dans le fichier : /var/www/DOC, et avant de lancer le serveur. Exécuter les commandes du screen suivant : <br>
             </p>
-            <img src="ASSERTS/Config fichier apache.png" alt="Config fichier apache">
+            <img src="ASSERTS/mise_en_ligne_du_site_.png" alt="mise en ligne du site">
 
-            <p>
-                Le plan d'adressage ci dessous nous montre les adresses IP des différents éléments du réseau. <br>
-                Cela va nous permettre de pouvoir ensuite lier les différents éléments entre eux dans le réseau local et de pouvoir les connecter à internet. <br>
-            </p>
-            <img src="ASSERTS/PlanAdressage.png" alt="plan d'adressage">
-            <img src="ASSERTS/ShemaReseau.png" alt="shéma réseau">
-
-            <p>
-                Enzo a configurer l'adressage de l'IP statique Ubuntu. <br>
-            </p>
-            <img src="ASSERTS/Adressage ip statique ubuntu expliquer les étape.png" alt="Adressage ip statique ubuntu expliquer les étape">
-
-            <p>
-                Enzo a configurer l'adressage de l'IP debian. <br>
-            </p>
-            <img src="ASSERTS/Adressage ip debian expliquer démarche.png" alt="Adressage ip debian expliquer démarche">
-
-            <p>
-                Enzo a configurer l'adressage de l'IP statique Windows. <br>
-            </p>
-            <img src="ASSERTS/Addressage ip statique windows.png" alt="Addressage ip statique windows">
-            
-            <p>
-                On devait créer un serveur avec apache.
-            </p>
 
             <h1>
                 Documentation d'exploitation
             </h1>
-
-            <h2>
-                Détailler l’utilisation des outils/services mis en place
-            </h2>
-
-            <p>
-                L'utilisation des outils c'est vmware et apache. <br>
-            </p>
 
             <h2>
                 Comment sauvegarder une nouvelle ressources web ?
