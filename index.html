@@ -76,14 +76,51 @@
             </h2>
 
             <p>
+                Voici les diférentes vm utiliser. <br>
+            </p>
+            <img src="ASSERTS/et la ta un backup qui est sur debian après ta Pfsense c'est le parefeu le serv apache c'est un débian aussi le client linux c'est un unbuntu et le client windows  sur le 10.png" alt="vm utiliser">
+            
+            <p>
+                Voici la config Pfsens sur les vm, la carte en gridge est celle qui prends le wan du router et la carte VMnet10 est celle du lan.
+            </p>
+            <img src="ASSERTS/c'est la config pfsens sur les vm tu peux dire que le carte en bridge c'est celle qui prends le wan du routeur et la VMnet10 celle du lan.png" alt="config Pfsens sur vm">
+
+            <p>
+                Ensuite on mets la Vmnet10 sur toutes les VM pour qu'elle rentre automatiquement dans le réseaux lan de Pfsens. <br>
+            </p>
+            <img src="ASSERTS/la tu dit que on mets sur tt les VM la Vmnet10 pour qu'elle rentre automatiquement dans le réseaux lan de pfsens.png" alt="Vmnet10 sur vm pour rentrer auto dans résean lan Pfsens">
+
+            <p>
+                On retrouve le Pfsense avec IPV4 pour le lan :
+            </p>
+            <img src="ASSERTS/Pfsense IPV4(lan).png" alt="Pfsense IPV4">
+
+            <p>
+                On retrouve le Pfsense avec IPV6 pour le wan :
+            </p>
+            <img src="ASSERTS/pfsense IPV6 (wan).png" alt="Pfsense IPV6">
+
+            <p>
+                Ensuite on a les règles de pare-feu pour le lan et le wan:
+            </p>
+            <img src="ASSERTS/régle pare feu lan.png" alt="pare feu lan">
+            <img src="ASSERTS/regle pare feu wan.png" alt="pare feu wan">
+
+            <p>
                 Il a fallu coder un script pour copier les ficiers sur le serveur backup. <br>
             </p>
             <img src="ASSERTS/Script pour copier les fichier sur le serveur backup.png" alt="Script pour copier les fichier sur le serveur backup">
 
             <p>
+                Lors ce que l'on souhaite récupérer une sauvegarde, on va utiliser ce script en mettant le nom du fichier que l'on souhaite récupérer. <br>
+            </p>
+            <img src="ASSERTS/c'est le même que pour le backup sauf que pour lui tu demande le fichier que tu veux récupérer dans le dossier Backup de la vm backup.png" alt="récup backup">
+
+            <p>
                 Il a fallu également définir une heure à laquel la sauvegarde se ferrait sous forme de crontab. <br>
             </p>
             <img src="ASSERTS/Ligne contrab pour effectuer la tache tout les jour a 3h du matin.png" alt="Ligne contrab pour effectuer la tache tout les jours a 3h du matin">
+
 
             <p>
                 Il a était nécessaire d'installer et de mettre en route un serveur ssh. <br>
