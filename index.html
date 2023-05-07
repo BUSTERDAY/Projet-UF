@@ -148,31 +148,34 @@
             <img src="ASSERTS/Mise en place du DNS du nom de domaine.png" alt="mise ne place DNS">
 
             <p>
-                Il a fallu coder un script pour copier les ficiers sur le serveur backup. <br>
+                Arpsè avoir fini la configuration des fichiers, et avoir mis les fichiers web dans le fichier : /var/www/DOC, et avant de lancer le serveur. Exécuter les commandes du screen suivant : <br>
             </p>
-            <img src="ASSERTS/Script pour copier les fichier sur le serveur backup.png" alt="Script pour copier les fichier sur le serveur backup">
+            <img src="ASSERTS/mise_en_ligne_du_site_.png" alt="mise en ligne du site">
+
+            <p>
+                Il a fallu coder un script pour copier les ficiers sur le serveur backup. <br>
+                Rsync est un outil de synchronisation de fichiers qui permet de copier des fichiers d'un emplacement à un autre. <br>
+                Rsync est la commande pour copier les fichiers qui se trouve sur un serveur ssh, dans notre cas le serveur backup. <br>
+                A la suite de rsync, sur la même ligne, on précise toutes les informations nécessaires au fonctionnement de la commande. <br>
+            </p>
+            <img src="ASSERTS/Script pour copier les fichier sur le serveur backup.png" alt="Script pour copier les fichier sur le serveur backup/enregistrement">
 
             <p>
                 Il a fallu également définir une heure à laquel la sauvegarde se ferrait sous forme de crontab. <br>
             </p>
-            <img src="ASSERTS/Ligne contrab pour effectuer la tache tout les jour a 3h du matin.png" alt="Ligne contrab pour effectuer la tache tout les jours a 3h du matin">
+            <img src="ASSERTS/Ligne contrab pour effectuer la tache tout les jour a 3h du matin.png" alt="Ligne contrab pour effectuer la tache tout les jours a 3h du matin/sauvegarde">
 
             <p>
                 Lors ce que l'on souhaite récupérer une sauvegarde, on va utiliser ce script en mettant le nom du fichier que l'on souhaite récupérer. <br>
-                Rsync est un outil de synchronisation de fichiers qui permet de copier des fichiers d'un emplacement à un autre. <br>
+                Nous avons a nouveau utiliser la commande rsync précédement expliquer. <br>
             </p>
-            <img src="ASSERTS/c'est le même que pour le backup sauf que pour lui tu demande le fichier que tu veux récupérer dans le dossier Backup de la vm backup.png" alt="récup backup">
+            <img src="ASSERTS/c'est le même que pour le backup sauf que pour lui tu demande le fichier que tu veux récupérer dans le dossier Backup de la vm backup.png" alt="récup backup/restauration">
 
             <p>
                 Il a était nécessaire d'installer et de mettre en route un serveur ssh. <br>
                 Aucune modification n'as était faite, on a garder la configuration de base. <br>
             </p>
             <img src="ASSERTS/Procédure installation et mise en route du serveur ssh aucune modification on garde la config de base.png" alt="Procédure installation et mise en route du serveur ssh">
-
-            <p>
-                Arpsè avoir fini la configuration des fichiers, et avoir mis les fichiers web dans le fichier : /var/www/DOC, et avant de lancer le serveur. Exécuter les commandes du screen suivant : <br>
-            </p>
-            <img src="ASSERTS/mise_en_ligne_du_site_.png" alt="mise en ligne du site">
 
 
             <h1>
