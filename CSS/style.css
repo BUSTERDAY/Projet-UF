@@ -54,3 +54,12 @@ p{
     margin-bottom: 1rem;
     color: rgb(36, 36, 137);
 }
+
+img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
+}
