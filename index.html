@@ -149,8 +149,9 @@
 
             <p>
                 Il a fallu coder un script pour copier les ficiers sur le serveur backup. <br>
+                On a utiliser rsync pour copier les fichier par ssh
             </p>
-            <img src="ASSERTS/Script pour copier les fichier sur le serveur backup.png" alt="Script pour copier les fichier sur le serveur backup">
+            <img src="ASSERTS/Backup%20changer%20.png" alt="Script pour copier les fichier sur le serveur backup">
 
             <p>
                 Il a fallu également définir une heure à laquel la sauvegarde se ferrait sous forme de crontab. <br>
@@ -159,13 +160,14 @@
 
             <p>
                 Lors ce que l'on souhaite récupérer une sauvegarde, on va utiliser ce script en mettant le nom du fichier que l'on souhaite récupérer. <br>
-                Rsync est un outil de synchronisation de fichiers qui permet de copier des fichiers d'un emplacement à un autre. <br>
+                 <br>
             </p>
-            <img src="ASSERTS/c'est le même que pour le backup sauf que pour lui tu demande le fichier que tu veux récupérer dans le dossier Backup de la vm backup.png" alt="récup backup">
+            <img src="ASSERTS/Restauration.png" alt="récup backup">
 
             <p>
                 Il a était nécessaire d'installer et de mettre en route un serveur ssh. <br>
                 Aucune modification n'as était faite, on a garder la configuration de base. <br>
+                On a juste créer des clef rsa sur Les VM de backup et de serveur apache pour faciliter les connection <br>
             </p>
             <img src="ASSERTS/Procédure installation et mise en route du serveur ssh aucune modification on garde la config de base.png" alt="Procédure installation et mise en route du serveur ssh">
 
